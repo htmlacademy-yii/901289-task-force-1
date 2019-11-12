@@ -2,8 +2,10 @@
 
 require_once ("src\Task.php");
 
-$a=new Task(1,1,1,'in work','customer');
+$a=new Task();
 
-echo($a->getActionList());
+echo ($a->get_next_status($a::ACTION_REFUSE));
+
+
 
 ?>

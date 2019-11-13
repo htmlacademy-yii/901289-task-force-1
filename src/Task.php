@@ -7,11 +7,11 @@ class Task {
     const USER_ROLE_EXECUTOR = "role_executor";
 
     //statuses constatns
-    const TASK_STATUS_NEW = "status_new";
-    const TASK_STATUS_CANCELED = "status_canceled";
-    const TASK_STATUS_DURING = "status_during";
-    const TASK_STATUS_DONE = "status_done";
-    const TASK_STATUS_FLUNK = "status_flunk";
+    const STATUS_NEW = "status_new";
+    const STATUS_CANCELED = "status_canceled";
+    const STATUS_DURING = "status_during";
+    const STATUS_DONE = "status_done";
+    const STATUS_FLUNK = "status_flunk";
 
     //actions constants
     const ACTION_CANCEL = "action_cancel";
@@ -20,12 +20,12 @@ class Task {
     const ACTION_REFUSE = "action_refuse";
 
     const USER_ROLES = [self::USER_ROLE_CUSTOMER, self::USER_ROLE_EXECUTOR];
-    const TASK_STATUSES = [
-        self::TASK_STATUS_NEW,
-        self::TASK_STATUS_CANCELED,
-        self::TASK_STATUS_DURING,
-        self::TASK_STATUS_DONE,
-        self::TASK_STATUS_FLUNK
+    const STATUSES = [
+        self::STATUS_NEW,
+        self::STATUS_CANCELED,
+        self::STATUS_DURING,
+        self::STATUS_DONE,
+        self::STATUS_FLUNK
     ];
     const ACTIONS = [
         self::ACTION_CANCEL,
@@ -53,13 +53,13 @@ class Task {
         ]
     ];*/
     const STATUS_AFTER_ACTION = [
-        self::ACTION_CANCEL => self::TASK_STATUS_CANCELED,
-        self::ACTION_DONE => self::TASK_STATUS_DONE,
-        self::ACTION_REFUSE => self::TASK_STATUS_FLUNK,
-        self::ACTION_RESPOND => self::TASK_STATUS_DURING
+        self::ACTION_CANCEL => self::STATUS_CANCELED,
+        self::ACTION_DONE => self::STATUS_DONE,
+        self::ACTION_REFUSE => self::STATUS_FLUNK,
+        self::ACTION_RESPOND => self::STATUS_DURING
     ];
 
-    public function get_next_status ($action=self::ACTION_CANCEL)
+    public function get_next_status ($action)
     {
          return self::STATUS_AFTER_ACTION[$action];
     }

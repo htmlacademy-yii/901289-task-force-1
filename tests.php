@@ -1,5 +1,6 @@
 <?php
-require_once ("src\Task.php");
+require_once "vendor/autoload.php";   
+use src\Task;
 
 $test=new Task;
 assert($test->get_next_status(Task::ACTION_CANCEL)==Task::STATUS_CANCELED);

@@ -1,0 +1,15 @@
+{
+    "name": "sys/901289-task-force-1",
+    "authors": [
+        {
+            "name": "SysoevEV",
+            "email": "plageat@ngs.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "src\\": "src"
+        }
+    }
+}
